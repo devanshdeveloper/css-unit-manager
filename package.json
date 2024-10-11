@@ -1,6 +1,6 @@
 {
   "name": "css-unit-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight JavaScript utility for CSS unit conversions.",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -21,7 +21,12 @@
   "keywords": [
     "dom",
     "utility",
-    "javascript"
+    "javascript",
+    "css",
+    "value",
+    "unit",
+    "converter",
+    "convert"
   ],
   "author": "Devansh Khetwani",
   "license": "MIT",

@@ -96,6 +96,29 @@ export default class CSSUnitManager {
         twip: 16 * 0.0666667,
       },
 
+      cm: {
+        px: 37.795275591, // 1cm = 37.795275591px
+        em: 37.795275591 / 16, // 1em = 37.795275591/16cm (assuming 16px = 1em)
+        rem: 37.795275591 / 16, // 1rem = 37.795275591/16cm
+        percent: 37.795275591 / 9600, // Percent to cm conversion (1% = 1px)
+        vw: 37.795275591 / (window.innerWidth / 100), // Calculate based on viewport width
+        vh: 37.795275591 / (window.innerHeight / 100), // Calculate based on viewport height
+        vmin:
+          37.795275591 /
+          (Math.min(window.innerWidth, window.innerHeight) / 100), // Minimum of vw and vh
+        vmax:
+          37.795275591 /
+          (Math.max(window.innerWidth, window.innerHeight) / 100), // Maximum of vw and vh
+        in: 1 / 2.54, // 1 inch = 2.54 cm
+        mm: 10, // 1cm = 10mm
+        pt: 1 / (1.0 / 2.54) / 72, // 1pt = 1/72 inch = 1/72*2.54cm
+        pc: 1 / (1.0 / 2.54) / 12, // 1pc = 12pt
+        ex: (37.795275591 / 16) * 0.5, // Assuming 1ex ≈ 0.5em
+        ch: (37.795275591 / 16) * 0.5, // Assuming 1ch ≈ 0.5em
+        Q: 40, // 1Q = 1/40th of a cm
+        twip: 1440 / (2.54 * 96), // 1 twip = 1/1440 inch
+      },
+
       // percentage units conversion
       percent: {
         px: 0.16, // 1% = 1px
@@ -243,7 +266,7 @@ export default class CSSUnitManager {
       },
     };
 
-    return defaultRates;
+    return { ...defaultRates, ...CSSUnitManager.customConversionRates };
   }
 
   // Add new unit with conversion rates
