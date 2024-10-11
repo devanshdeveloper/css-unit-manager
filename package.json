@@ -1,6 +1,6 @@
 {
   "name": "css-unit-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight JavaScript utility for CSS unit conversions.",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",

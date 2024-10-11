@@ -2,7 +2,7 @@ type ConversionRates = {
   [unit: string]: { [targetUnit: string]: number };
 };
 
-export default class CSSUnitManager {
+export class CSSUnitManager {
   private value: number;
   private unit: string;
   private initialValue: number;
@@ -386,4 +386,8 @@ export default class CSSUnitManager {
     const convertedOther = other.toUnit(this.unit);
     return this.value === convertedOther.value;
   }
+}
+
+export default function unit(string: string) {
+  return CSSUnitManager.fromString(string);
 }

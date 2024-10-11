@@ -1,4 +1,4 @@
-export default class CSSUnitManager {
+export class CSSUnitManager {
     value;
     unit;
     initialValue;
@@ -340,5 +340,8 @@ export default class CSSUnitManager {
         const convertedOther = other.toUnit(this.unit);
         return this.value === convertedOther.value;
     }
+}
+export default function unit(string) {
+    return CSSUnitManager.fromString(string);
 }
 //# sourceMappingURL=index.js.map

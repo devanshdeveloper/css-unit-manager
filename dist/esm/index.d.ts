@@ -3,7 +3,7 @@ type ConversionRates = {
         [targetUnit: string]: number;
     };
 };
-export default class CSSUnitManager {
+export declare class CSSUnitManager {
     private value;
     private unit;
     private initialValue;
@@ -31,4 +31,5 @@ export default class CSSUnitManager {
     toNumber(): number;
     isEqual(other: CSSUnitManager): boolean;
 }
+export default function unit(string: string): CSSUnitManager;
 export {};
